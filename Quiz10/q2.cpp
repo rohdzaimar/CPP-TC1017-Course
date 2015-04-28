@@ -22,11 +22,11 @@ bool sameSize(const vector<int>& firstVector, const vector<int>& secondVector)
 int dotProduct(const vector<int>& firstVector, const vector<int>& secondVector)
 {
 	
-	int dProd;
+	int dProd= 0;
 
 	if (sameSize(firstVector, secondVector))
 	{
-		for (unsigned int i = 0; i < firstVector.size; i++)
+		for (unsigned int i = 0; i < firstVector.size(); i++)
 		{
 			dProd += (firstVector[i] * secondVector[i]);
 		}
@@ -65,14 +65,15 @@ int main()
 
 	cout << "the following program calculates the Dot Product between two vectors." << endl;
 	fillVector(list1, i);
-	i++
+	i++;
 	fillVector(list2, i);
 
 	if(sameSize(list1, list2) != true)
 	{
 		cout << "sorry, your vectors are not the same size. Please try again." << endl;
-		list1.clear;
-		list2.clear;
+		list1.clear();
+		list2.clear();
+		return 0;
 	}
 
 	cout << "the dot product of your vectors is: " << dotProduct(list1, list2) << endl;
